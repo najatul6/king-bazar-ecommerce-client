@@ -6,7 +6,6 @@ import LogIn from "../pages/LogIn/LogIn";
 import SignUp from "../pages/SignUp/SignUp";
 import AddProduct from "../pages/AddProduct/AddProduct";
 import MyCart from "../pages/MyCart/MyCart";
-import UpdateProduct from "../pages/UpdateProduct/ComputerAccessoriesUpdate";
 import ComputerAccessoriesDetails from "../pages/ProductDetails/ComputerAccessoriesDetails";
 import ComputerComponentsDetails from "../pages/ProductDetails/ComputerComponentsDetails";
 import LaptopAccessoriesDetails from "../pages/ProductDetails/LaptopAccessoriesDetails";
@@ -17,6 +16,16 @@ import PrinterDetails from "../pages/ProductDetails/PrinterDetails";
 import ScanerDetails from "../pages/ProductDetails/ScanerDetails";
 import ComputerServersDetails from "../pages/ProductDetails/ComputerServersDetails";
 import DataStorageDetails from "../pages/ProductDetails/DataStorageDetails";
+import ComputerAccessoriesUpdate from "../pages/UpdateProduct/ComputerAccessoriesUpdate";
+import ComputerComponentsUpadate from "../pages/UpdateProduct/ComputerComponentsUpadate";
+import ComputerMonitorsUpadte from "../pages/UpdateProduct/ComputerMonitorsUpadte";
+import ComputerNetworkingDetailsUpdate from "../pages/UpdateProduct/ComputerNetworkingDetailsUpdate";
+import ComputerServersDetailsUpadate from "../pages/UpdateProduct/ComputerServersDetailsUpadate";
+import DataStorageDetailsUpdate from "../pages/UpdateProduct/DataStorageDetailsUpdate";
+import LaptopAccessoriesDetailsUpdate from "../pages/UpdateProduct/LaptopAccessoriesDetailsUpdate";
+import PowerStripDetailsUpdate from "../pages/UpdateProduct/PowerStripDetailsUpdate";
+import PrinterDetailsUpdate from "../pages/UpdateProduct/PrinterDetailsUpdate";
+import ScanerDetailsUpdate from "../pages/UpdateProduct/ScanerDetailsUpdate";
 
 const Router = createBrowserRouter([
     {
@@ -47,53 +56,53 @@ const Router = createBrowserRouter([
             // Update Product Details 
             {
                 path:'/computeraccessories/update/:id',
-                element:<ComputerAccessoriesDetails></ComputerAccessoriesDetails>,
-                loader:()=>fetch(`http://localhost:5000/computeraccessories`)
+                element:<ComputerAccessoriesUpdate></ComputerAccessoriesUpdate>,
+                loader:({params})=>fetch(`http://localhost:5000/computeraccessories/${params.id}`)
             },
             {
                 path:'/component/update/:id',
-                element:<ComputerComponentsDetails></ComputerComponentsDetails>,
-                loader:()=>fetch(`http://localhost:5000/components`)
+                element:<ComputerComponentsUpadate></ComputerComponentsUpadate>,
+                loader:({params})=>fetch(`http://localhost:5000/components/${params.id}`)
             },
             {
                 path:'/accessories/update/:id',
-                element:<LaptopAccessoriesDetails></LaptopAccessoriesDetails>,
-                loader:()=>fetch(`http://localhost:5000/accessories`)
+                element:<LaptopAccessoriesDetailsUpdate></LaptopAccessoriesDetailsUpdate>,
+                loader:({params})=>fetch(`http://localhost:5000/accessories/${params.id}`)
             },
             {
                 path:'/monitor/update/:id',
-                element:<ComputerMonitorsDetails></ComputerMonitorsDetails>,
-                loader:()=>fetch(`http://localhost:5000/monitors`)
+                element:<ComputerMonitorsUpadte></ComputerMonitorsUpadte>,
+                loader:({params})=>fetch(`http://localhost:5000/monitors/${params.id}`)
             },
             {
                 path:'/networking/update/:id',
-                element:<ComputerNetworkingDetails></ComputerNetworkingDetails>,
-                loader:()=>fetch(`http://localhost:5000/networking`)
+                element:<ComputerNetworkingDetailsUpdate></ComputerNetworkingDetailsUpdate>,
+                loader:({params})=>fetch(`http://localhost:5000/networking/${params.id}`)
             },
             {
                 path:'/strip/update/:id',
-                element:<PowerStripDetails></PowerStripDetails>,
-                loader:()=>fetch(`http://localhost:5000/strip`)
+                element:<PowerStripDetailsUpdate></PowerStripDetailsUpdate>,
+                loader:({params})=>fetch(`http://localhost:5000/strip/${params.id}`)
             },
             {
                 path:'/printer/update/:id',
-                element:<PrinterDetails></PrinterDetails>,
-                loader:()=>fetch(`http://localhost:5000/printer`)
+                element:<PrinterDetailsUpdate></PrinterDetailsUpdate>,
+                loader:({params})=>fetch(`http://localhost:5000/printer/${params.id}`)
             },
             {
                 path:'/scanner/update/:id',
-                element:<ScanerDetails></ScanerDetails>,
-                loader:()=>fetch(`http://localhost:5000/scanner`)
+                element:<ScanerDetailsUpdate></ScanerDetailsUpdate>,
+                loader:({params})=>fetch(`http://localhost:5000/scanner/${params.id}`)
             },
             {
                 path:'/servers/update/:id',
-                element:<ComputerServersDetails></ComputerServersDetails>,
-                loader:()=>fetch(`http://localhost:5000/servers`)
+                element:<ComputerServersDetailsUpadate></ComputerServersDetailsUpadate>,
+                loader:({params})=>fetch(`http://localhost:5000/servers/${params.id}`)
             },
             {
                 path:'/storage/update/:id',
-                element:<DataStorageDetails></DataStorageDetails>,
-                loader:()=>fetch(`http://localhost:5000/storage`)
+                element:<DataStorageDetailsUpdate></DataStorageDetailsUpdate>,
+                loader:({params})=>fetch(`http://localhost:5000/storage/${params.id}`)
             },
             
             // For Product Details 

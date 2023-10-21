@@ -32,7 +32,7 @@ const ScanerDetails = () => {
             )
         } else {
             const isItem = cartsItem.find(item => product.id === _id)
-            if(!isItem){
+            if (!isItem) {
                 addToCart.push(...cartsItem, product)
                 localStorage.setItem('carts', JSON.stringify(addToCart))
                 Swal.fire(
@@ -41,7 +41,7 @@ const ScanerDetails = () => {
                     'success'
                 )
             }
-            else{
+            else {
                 Swal.fire(
                     'OPPS!',
                     'Product Already Added',
@@ -75,7 +75,9 @@ const ScanerDetails = () => {
                             readOnly
                         />
                         <button onClick={handleAddToCart} className="btn  bg-[#f16022] text-white">Add to Cart</button>
-                        <button className="btn m-2  bg-[#f16022] text-white">Update Details</button>
+                        <Link to={`/scanner/update/${_id}`}>
+                            <button className="btn m-2  bg-[#f16022] text-white">Update Details</button>
+                        </Link>
                     </div>
                 </div>
             </div>
