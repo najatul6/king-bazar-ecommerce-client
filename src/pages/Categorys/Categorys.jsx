@@ -13,8 +13,10 @@ import Scaner from "./Scaner/Scaner";
 const Categorys = () => {
     return (
         <div>
-            <h2 className="text-2xl md:text-4xl font-semibold text-center mt-10 mb-1 text-[#f16022]">Category</h2>
-            <hr className="h-1 w-1/2 bg-[#f16022] border-none rounded-xl mx-auto mb-10"/>
+            <div className="bg-[#f16022] border-2 mt-10 mb-1 py-2">
+                <h2 className="text-2xl md:text-4xl font-semibold text-center text-white uppercase">categories</h2>
+            </div>
+
             <ComputerAccessories></ComputerAccessories>
             <ComputerComponents></ComputerComponents>
             <LaptopAccessories></LaptopAccessories>
