@@ -75,7 +75,7 @@ const DataStorageDetails = () => {
                             readOnly
                         />
                         <button onClick={handleAddToCart} className="btn  bg-[#f16022] text-white">Add to Cart</button>
-                        <Link to={`/scanner/update/${_id}`}>
+                        <Link to={`/storage/update/${_id}`}>
                             <button className="btn m-2  bg-[#f16022] text-white">Update Details</button>
                         </Link>
                     </div>
