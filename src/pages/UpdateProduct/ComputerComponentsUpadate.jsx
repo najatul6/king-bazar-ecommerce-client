@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
 
-const UpdateProduct = () => {
+
+const ComputerComponentsUpadate = () => {
     return (
         <div className="md:w-3/4 mx-auto mt-10">
             <h2 className="text-2xl flex items-center gap-3 rounded-xl bg-base-600 border-2 hover:border-[#f16022] btn font-semibold uppercase text-[#f16022]">
@@ -100,4 +101,4 @@ const UpdateProduct = () => {
     );
 };
 
-export default UpdateProduct;
+export default ComputerComponentsUpadate;

@@ -6,7 +6,7 @@ import LogIn from "../pages/LogIn/LogIn";
 import SignUp from "../pages/SignUp/SignUp";
 import AddProduct from "../pages/AddProduct/AddProduct";
 import MyCart from "../pages/MyCart/MyCart";
-import UpdateProduct from "../pages/UpdateProduct/UpdateProduct";
+import UpdateProduct from "../pages/UpdateProduct/ComputerAccessoriesUpdate";
 import ComputerAccessoriesDetails from "../pages/ProductDetails/ComputerAccessoriesDetails";
 import ComputerComponentsDetails from "../pages/ProductDetails/ComputerComponentsDetails";
 import LaptopAccessoriesDetails from "../pages/ProductDetails/LaptopAccessoriesDetails";
@@ -33,20 +33,67 @@ const Router = createBrowserRouter([
                 element:<AddProduct></AddProduct>
             },
             {
-                path:'/updateproduct',
-                element:<UpdateProduct></UpdateProduct>
-            },
-            {
-                path:'/mycart',
-                element:<MyCart></MyCart>
-            },
-            {
                 path:'/login',
                 element:<LogIn></LogIn>
             },
             {
                 path:'/signup',
                 element:<SignUp></SignUp>
+            },
+            {
+                path:'/mycart',
+                element:<MyCart></MyCart>
+            },
+            // Update Product Details 
+            {
+                path:'/computeraccessories/update/:id',
+                element:<ComputerAccessoriesDetails></ComputerAccessoriesDetails>,
+                loader:()=>fetch(`http://localhost:5000/computeraccessories`)
+            },
+            {
+                path:'/component/update/:id',
+                element:<ComputerComponentsDetails></ComputerComponentsDetails>,
+                loader:()=>fetch(`http://localhost:5000/components`)
+            },
+            {
+                path:'/accessories/update/:id',
+                element:<LaptopAccessoriesDetails></LaptopAccessoriesDetails>,
+                loader:()=>fetch(`http://localhost:5000/accessories`)
+            },
+            {
+                path:'/monitor/update/:id',
+                element:<ComputerMonitorsDetails></ComputerMonitorsDetails>,
+                loader:()=>fetch(`http://localhost:5000/monitors`)
+            },
+            {
+                path:'/networking/update/:id',
+                element:<ComputerNetworkingDetails></ComputerNetworkingDetails>,
+                loader:()=>fetch(`http://localhost:5000/networking`)
+            },
+            {
+                path:'/strip/update/:id',
+                element:<PowerStripDetails></PowerStripDetails>,
+                loader:()=>fetch(`http://localhost:5000/strip`)
+            },
+            {
+                path:'/printer/update/:id',
+                element:<PrinterDetails></PrinterDetails>,
+                loader:()=>fetch(`http://localhost:5000/printer`)
+            },
+            {
+                path:'/scanner/update/:id',
+                element:<ScanerDetails></ScanerDetails>,
+                loader:()=>fetch(`http://localhost:5000/scanner`)
+            },
+            {
+                path:'/servers/update/:id',
+                element:<ComputerServersDetails></ComputerServersDetails>,
+                loader:()=>fetch(`http://localhost:5000/servers`)
+            },
+            {
+                path:'/storage/update/:id',
+                element:<DataStorageDetails></DataStorageDetails>,
+                loader:()=>fetch(`http://localhost:5000/storage`)
             },
             
             // For Product Details 
