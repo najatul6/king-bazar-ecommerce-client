@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const LaptopAccessories = () => {
     const [product, setProduct] = useState()
     useEffect(() => {
-        fetch('http://localhost:5000/accessories')
+        fetch('https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/accessories')
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])

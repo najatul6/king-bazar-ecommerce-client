@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const PowerStrip = () => {
     const [product, setProduct] = useState()
     useEffect(() => {
-        fetch('http://localhost:5000/strip')
+        fetch('https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/strip')
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])

@@ -20,7 +20,7 @@ const SignUp = () => {
             .then(result => {
                 // User Created 
                 const user = {email, password}
-                fetch('http://localhost:5000/user',{
+                fetch('https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/users',{
                     method:"POST",
                     headers:{
                         'content-type': 'application/json'

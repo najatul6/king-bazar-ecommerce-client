@@ -60,120 +60,120 @@ const Router = createBrowserRouter([
                 element: <PrivateRoute>
                     <ComputerAccessoriesUpdate></ComputerAccessoriesUpdate>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/computeraccessories/${params.id}`)
+                loader: ({ params }) => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/computeraccessories/${params.id}`)
             },
             {
                 path: '/component/update/:id',
                 element: <PrivateRoute><ComputerComponentsUpadate></ComputerComponentsUpadate></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/components/${params.id}`)
+                loader: ({ params }) => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/components/${params.id}`)
             },
             {
                 path: '/accessories/update/:id',
                 element: <PrivateRoute>
                     <LaptopAccessoriesDetailsUpdate></LaptopAccessoriesDetailsUpdate>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/accessories/${params.id}`)
+                loader: ({ params }) => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/accessories/${params.id}`)
             },
             {
                 path: '/monitor/update/:id',
                 element: <PrivateRoute>
                     <ComputerMonitorsUpadte></ComputerMonitorsUpadte>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/monitors/${params.id}`)
+                loader: ({ params }) => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/monitors/${params.id}`)
             },
             {
                 path: '/networking/update/:id',
                 element: <PrivateRoute>
                     <ComputerNetworkingDetailsUpdate></ComputerNetworkingDetailsUpdate>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/networking/${params.id}`)
+                loader: ({ params }) => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/networking/${params.id}`)
             },
             {
                 path: '/strip/update/:id',
                 element: <PrivateRoute>
                     <PowerStripDetailsUpdate></PowerStripDetailsUpdate>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/strip/${params.id}`)
+                loader: ({ params }) => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/strip/${params.id}`)
             },
             {
                 path: '/printer/update/:id',
                 element: <PrivateRoute>
                     <PrinterDetailsUpdate></PrinterDetailsUpdate>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/printer/${params.id}`)
+                loader: ({ params }) => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/printer/${params.id}`)
             },
             {
                 path: '/scanner/update/:id',
                 element: <PrivateRoute>
                     <ScanerDetailsUpdate></ScanerDetailsUpdate>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/scanner/${params.id}`)
+                loader: ({ params }) => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/scanner/${params.id}`)
             },
             {
                 path: '/servers/update/:id',
                 element: <PrivateRoute>
                     <ComputerServersDetailsUpadate></ComputerServersDetailsUpadate>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/servers/${params.id}`)
+                loader: ({ params }) => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/servers/${params.id}`)
             },
             {
                 path: '/storage/update/:id',
                 element: <PrivateRoute>
                     <DataStorageDetailsUpdate></DataStorageDetailsUpdate>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/storage/${params.id}`)
+                loader: ({ params }) => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/storage/${params.id}`)
             },
 
             // For Product Details 
             {
                 path: '/products/:id',
                 element: <ComputerAccessoriesDetails></ComputerAccessoriesDetails>,
-                loader: () => fetch(`http://localhost:5000/computeraccessories`)
+                loader: () => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/computeraccessories`)
             },
             {
                 path: '/component/:id',
                 element: <ComputerComponentsDetails></ComputerComponentsDetails>,
-                loader: () => fetch(`http://localhost:5000/components`)
+                loader: () => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/components`)
             },
             {
                 path: '/accessories/:id',
                 element: <LaptopAccessoriesDetails></LaptopAccessoriesDetails>,
-                loader: () => fetch(`http://localhost:5000/accessories`)
+                loader: () => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/accessories`)
             },
             {
                 path: '/monitor/:id',
                 element: <ComputerMonitorsDetails></ComputerMonitorsDetails>,
-                loader: () => fetch(`http://localhost:5000/monitors`)
+                loader: () => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/monitors`)
             },
             {
                 path: '/networking/:id',
                 element: <ComputerNetworkingDetails></ComputerNetworkingDetails>,
-                loader: () => fetch(`http://localhost:5000/networking`)
+                loader: () => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/networking`)
             },
             {
                 path: '/strip/:id',
                 element: <PowerStripDetails></PowerStripDetails>,
-                loader: () => fetch(`http://localhost:5000/strip`)
+                loader: () => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/strip`)
             },
             {
                 path: '/printer/:id',
                 element: <PrinterDetails></PrinterDetails>,
-                loader: () => fetch(`http://localhost:5000/printer`)
+                loader: () => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/printer`)
             },
             {
                 path: '/scanner/:id',
                 element: <ScanerDetails></ScanerDetails>,
-                loader: () => fetch(`http://localhost:5000/scanner`)
+                loader: () => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/scanner`)
             },
             {
                 path: '/servers/:id',
                 element: <ComputerServersDetails></ComputerServersDetails>,
-                loader: () => fetch(`http://localhost:5000/servers`)
+                loader: () => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/servers`)
             },
             {
                 path: '/storage/:id',
                 element: <DataStorageDetails></DataStorageDetails>,
-                loader: () => fetch(`http://localhost:5000/storage`)
+                loader: () => fetch(`https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/storage`)
             }
         ]
     }

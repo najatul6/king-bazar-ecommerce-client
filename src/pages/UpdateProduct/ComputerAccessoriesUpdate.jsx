@@ -21,28 +21,28 @@ const ComputerAccessoriesUpdate = () => {
         console.log(updatedProducts)
 
         // Fetch URL 
-        let productUrl = 'http://localhost:5000/computeraccessories';
+        let productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/computeraccessories';
 
         if (productType === 'ComputerAccessories') {
-            productUrl = 'http://localhost:5000/computeraccessories'
+            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/computeraccessories'
         } else if (productType === 'Components') {
-            productUrl = 'http://localhost:5000/components'
+            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/components'
         } else if (productType === 'Accessories') {
-            productUrl = 'http://localhost:5000/accessories'
+            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/accessories'
         } else if (productType === 'Monitors') {
-            productUrl = 'http://localhost:5000/monitors'
+            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/monitors'
         } else if (productType === 'Networking') {
-            productUrl = 'http://localhost:5000/networking'
+            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/networking'
         } else if (productType === 'Strip') {
-            productUrl = 'http://localhost:5000/strip'
+            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/strip'
         } else if (productType === 'Printer') {
-            productUrl = 'http://localhost:5000/printer'
+            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/printer'
         } else if (productType === 'Scanner') {
-            productUrl = 'http://localhost:5000/scanner'
+            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/scanner'
         } else if (productType === 'Servers') {
-            productUrl = 'http://localhost:5000/servers'
+            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/servers'
         } else if (productType === 'Storage') {
-            productUrl = 'http://localhost:5000/storage'
+            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/storage'
         }
 
         // Send Data to Server 

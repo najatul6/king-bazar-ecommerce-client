@@ -5,7 +5,7 @@ import ComputerServersCard from "./ComputerServersCard";
 const ComputerServers = () => {
     const [product, setProduct] = useState()
     useEffect(() => {
-        fetch('http://localhost:5000/servers')
+        fetch('https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/servers')
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
