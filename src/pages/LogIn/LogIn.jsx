@@ -1,12 +1,50 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AiFillGoogleCircle } from "react-icons/ai";
+import { useContext } from "react";
+import { AuthContext } from "../../common/provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const LogIn = () => {
+    const { logIn, googleLogIn } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+
     const handleLogIn = e => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        const user = { email, password };
+        logIn(email, password)
+            .then(result => {
+                Swal.fire({
+                    icon: 'success',
+                    title: "Log in Succesfully",
+                })
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'warning',
+                    title: error.message,
+                })
+            })
+    }
+
+    const handleGoogle = () => {
+        googleLogIn()
+            .then(result => {
+                Swal.fire({
+                    icon: 'success',
+                    title: "Log in Succesfully",
+                })
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'warning',
+                    title: error.message,
+                })
+            })
     }
     return (
         <div className=" items-center flex flex-col rounded-xl bg-base-600 my-4 bg-clip-border text-[#f16022] shadow-none">
@@ -16,13 +54,15 @@ const LogIn = () => {
             <p className="mt-1 block font-sans text-base font-normal leading-relaxed text-[#f16022] antialiased">
                 Enter your details to register.
             </p>
+
+
             <form
                 onSubmit={handleLogIn}
                 className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
                 <div className="mb-4 flex flex-col gap-6">
                     <div className="relative h-11 w-full min-w-[200px]">
                         <input
-                        name="email"
+                            name="email"
                             className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-[#f16022] outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-[#f16022] focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                             placeholder=" "
                         />
@@ -32,7 +72,7 @@ const LogIn = () => {
                     </div>
                     <div className="relative h-11 w-full min-w-[200px]">
                         <input
-                        name="password"
+                            name="password"
                             type="password"
                             className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-[#f16022] outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-[#f16022] focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                             placeholder=" "
@@ -45,6 +85,7 @@ const LogIn = () => {
                 <Link to='/'>
                     Forget Password?
                 </Link>
+
                 <button
                     className="mt-6 block w-full select-none rounded-lg bg-[#f16022] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-[#f16022]/20 transition-all hover:shadow-lg hover:shadow-[#f16022]/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                     type="submit"
@@ -52,6 +93,15 @@ const LogIn = () => {
                 >
                     Log In
                 </button>
+                <div className="flex items-center justify-center mt-5 gap-2">
+                    <p className="h-1 w-7 border-none bg-[#f16022]"></p>
+                    <p className="text-lg">Continue With</p>
+                    <p className="h-1 w-7 border-none bg-[#f16022]"></p>
+                </div>
+                <div className="flex justify-center">
+                    <button onClick={handleGoogle}> <AiFillGoogleCircle className="text-2xl text-center"></AiFillGoogleCircle></button>
+                </div>
+
                 <p className="mt-4 block text-center font-sans text-base font-normal leading-relaxed text-[#f16022] antialiased">
                     Create an account?
                     <Link

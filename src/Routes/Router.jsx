@@ -26,135 +26,154 @@ import LaptopAccessoriesDetailsUpdate from "../pages/UpdateProduct/LaptopAccesso
 import PowerStripDetailsUpdate from "../pages/UpdateProduct/PowerStripDetailsUpdate";
 import PrinterDetailsUpdate from "../pages/UpdateProduct/PrinterDetailsUpdate";
 import ScanerDetailsUpdate from "../pages/UpdateProduct/ScanerDetailsUpdate";
+import PrivateRoute from "./PrivateRoute";
 
 const Router = createBrowserRouter([
     {
-        path:'/',
-        element:<Layout></Layout>,
-        errorElement:<ErrorPage></ErrorPage>,
-        children:[
+        path: '/',
+        element: <Layout></Layout>,
+        errorElement: <ErrorPage></ErrorPage>,
+        children: [
             {
-                path:'/',
-                element:<Home></Home>
+                path: '/',
+                element: <Home></Home>
             },
             {
-                path:'/addproduct',
-                element:<AddProduct></AddProduct>
+                path: '/addproduct',
+                element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
             },
             {
-                path:'/login',
-                element:<LogIn></LogIn>
+                path: '/login',
+                element: <LogIn></LogIn>
             },
             {
-                path:'/signup',
-                element:<SignUp></SignUp>
+                path: '/signup',
+                element: <SignUp></SignUp>
             },
             {
-                path:'/mycart',
-                element:<MyCart></MyCart>
+                path: '/mycart',
+                element: <PrivateRoute><MyCart></MyCart></PrivateRoute>
             },
             // Update Product Details 
             {
-                path:'/computeraccessories/update/:id',
-                element:<ComputerAccessoriesUpdate></ComputerAccessoriesUpdate>,
-                loader:({params})=>fetch(`http://localhost:5000/computeraccessories/${params.id}`)
+                path: '/computeraccessories/update/:id',
+                element: <PrivateRoute>
+                    <ComputerAccessoriesUpdate></ComputerAccessoriesUpdate>
+                </PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/computeraccessories/${params.id}`)
             },
             {
-                path:'/component/update/:id',
-                element:<ComputerComponentsUpadate></ComputerComponentsUpadate>,
-                loader:({params})=>fetch(`http://localhost:5000/components/${params.id}`)
+                path: '/component/update/:id',
+                element: <PrivateRoute><ComputerComponentsUpadate></ComputerComponentsUpadate></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/components/${params.id}`)
             },
             {
-                path:'/accessories/update/:id',
-                element:<LaptopAccessoriesDetailsUpdate></LaptopAccessoriesDetailsUpdate>,
-                loader:({params})=>fetch(`http://localhost:5000/accessories/${params.id}`)
+                path: '/accessories/update/:id',
+                element: <PrivateRoute>
+                    <LaptopAccessoriesDetailsUpdate></LaptopAccessoriesDetailsUpdate>
+                </PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/accessories/${params.id}`)
             },
             {
-                path:'/monitor/update/:id',
-                element:<ComputerMonitorsUpadte></ComputerMonitorsUpadte>,
-                loader:({params})=>fetch(`http://localhost:5000/monitors/${params.id}`)
+                path: '/monitor/update/:id',
+                element: <PrivateRoute>
+                    <ComputerMonitorsUpadte></ComputerMonitorsUpadte>
+                </PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/monitors/${params.id}`)
             },
             {
-                path:'/networking/update/:id',
-                element:<ComputerNetworkingDetailsUpdate></ComputerNetworkingDetailsUpdate>,
-                loader:({params})=>fetch(`http://localhost:5000/networking/${params.id}`)
+                path: '/networking/update/:id',
+                element: <PrivateRoute>
+                    <ComputerNetworkingDetailsUpdate></ComputerNetworkingDetailsUpdate>
+                </PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/networking/${params.id}`)
             },
             {
-                path:'/strip/update/:id',
-                element:<PowerStripDetailsUpdate></PowerStripDetailsUpdate>,
-                loader:({params})=>fetch(`http://localhost:5000/strip/${params.id}`)
+                path: '/strip/update/:id',
+                element: <PrivateRoute>
+                    <PowerStripDetailsUpdate></PowerStripDetailsUpdate>
+                </PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/strip/${params.id}`)
             },
             {
-                path:'/printer/update/:id',
-                element:<PrinterDetailsUpdate></PrinterDetailsUpdate>,
-                loader:({params})=>fetch(`http://localhost:5000/printer/${params.id}`)
+                path: '/printer/update/:id',
+                element: <PrivateRoute>
+                    <PrinterDetailsUpdate></PrinterDetailsUpdate>
+                </PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/printer/${params.id}`)
             },
             {
-                path:'/scanner/update/:id',
-                element:<ScanerDetailsUpdate></ScanerDetailsUpdate>,
-                loader:({params})=>fetch(`http://localhost:5000/scanner/${params.id}`)
+                path: '/scanner/update/:id',
+                element: <PrivateRoute>
+                    <ScanerDetailsUpdate></ScanerDetailsUpdate>
+                </PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/scanner/${params.id}`)
             },
             {
-                path:'/servers/update/:id',
-                element:<ComputerServersDetailsUpadate></ComputerServersDetailsUpadate>,
-                loader:({params})=>fetch(`http://localhost:5000/servers/${params.id}`)
+                path: '/servers/update/:id',
+                element: <PrivateRoute>
+                    <ComputerServersDetailsUpadate></ComputerServersDetailsUpadate>
+                </PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/servers/${params.id}`)
             },
             {
-                path:'/storage/update/:id',
-                element:<DataStorageDetailsUpdate></DataStorageDetailsUpdate>,
-                loader:({params})=>fetch(`http://localhost:5000/storage/${params.id}`)
+                path: '/storage/update/:id',
+                element: <PrivateRoute>
+                    <DataStorageDetailsUpdate></DataStorageDetailsUpdate>
+                </PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/storage/${params.id}`)
             },
-            
+
             // For Product Details 
             {
-                path:'/products/:id',
-                element:<ComputerAccessoriesDetails></ComputerAccessoriesDetails>,
-                loader:()=>fetch(`http://localhost:5000/computeraccessories`)
+                path: '/products/:id',
+                element: <ComputerAccessoriesDetails></ComputerAccessoriesDetails>,
+                loader: () => fetch(`http://localhost:5000/computeraccessories`)
             },
             {
-                path:'/component/:id',
-                element:<ComputerComponentsDetails></ComputerComponentsDetails>,
-                loader:()=>fetch(`http://localhost:5000/components`)
+                path: '/component/:id',
+                element: <ComputerComponentsDetails></ComputerComponentsDetails>,
+                loader: () => fetch(`http://localhost:5000/components`)
             },
             {
-                path:'/accessories/:id',
-                element:<LaptopAccessoriesDetails></LaptopAccessoriesDetails>,
-                loader:()=>fetch(`http://localhost:5000/accessories`)
+                path: '/accessories/:id',
+                element: <LaptopAccessoriesDetails></LaptopAccessoriesDetails>,
+                loader: () => fetch(`http://localhost:5000/accessories`)
             },
             {
-                path:'/monitor/:id',
-                element:<ComputerMonitorsDetails></ComputerMonitorsDetails>,
-                loader:()=>fetch(`http://localhost:5000/monitors`)
+                path: '/monitor/:id',
+                element: <ComputerMonitorsDetails></ComputerMonitorsDetails>,
+                loader: () => fetch(`http://localhost:5000/monitors`)
             },
             {
-                path:'/networking/:id',
-                element:<ComputerNetworkingDetails></ComputerNetworkingDetails>,
-                loader:()=>fetch(`http://localhost:5000/networking`)
+                path: '/networking/:id',
+                element: <ComputerNetworkingDetails></ComputerNetworkingDetails>,
+                loader: () => fetch(`http://localhost:5000/networking`)
             },
             {
-                path:'/strip/:id',
-                element:<PowerStripDetails></PowerStripDetails>,
-                loader:()=>fetch(`http://localhost:5000/strip`)
+                path: '/strip/:id',
+                element: <PowerStripDetails></PowerStripDetails>,
+                loader: () => fetch(`http://localhost:5000/strip`)
             },
             {
-                path:'/printer/:id',
-                element:<PrinterDetails></PrinterDetails>,
-                loader:()=>fetch(`http://localhost:5000/printer`)
+                path: '/printer/:id',
+                element: <PrinterDetails></PrinterDetails>,
+                loader: () => fetch(`http://localhost:5000/printer`)
             },
             {
-                path:'/scanner/:id',
-                element:<ScanerDetails></ScanerDetails>,
-                loader:()=>fetch(`http://localhost:5000/scanner`)
+                path: '/scanner/:id',
+                element: <ScanerDetails></ScanerDetails>,
+                loader: () => fetch(`http://localhost:5000/scanner`)
             },
             {
-                path:'/servers/:id',
-                element:<ComputerServersDetails></ComputerServersDetails>,
-                loader:()=>fetch(`http://localhost:5000/servers`)
+                path: '/servers/:id',
+                element: <ComputerServersDetails></ComputerServersDetails>,
+                loader: () => fetch(`http://localhost:5000/servers`)
             },
             {
-                path:'/storage/:id',
-                element:<DataStorageDetails></DataStorageDetails>,
-                loader:()=>fetch(`http://localhost:5000/storage`)
+                path: '/storage/:id',
+                element: <DataStorageDetails></DataStorageDetails>,
+                loader: () => fetch(`http://localhost:5000/storage`)
             }
         ]
     }

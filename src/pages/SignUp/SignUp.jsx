@@ -1,10 +1,12 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../common/provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const SignUp = () => {
     const { createUser } = useContext(AuthContext)
+    const location = useLocation();
+    const navigate = useNavigate()
 
     const handlesignup = e => {
         e.preventDefault();
@@ -32,6 +34,7 @@ const SignUp = () => {
                             icon: 'success',
                             title: "User Created successfully",
                           })
+                          navigate(location?.state ? location.state : '/');
                     }
                 })
 
