@@ -1,6 +1,52 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../common/provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
+    const { createUser } = useContext(AuthContext)
+
+    const handlesignup = e => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const username = form.username.value;
+        const imageurl = form.imageurl.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        createUser(email, password)
+            .then(result => {
+                // User Created 
+                const user = {email, password}
+                fetch('http://localhost:5000/user',{
+                    method:"POST",
+                    headers:{
+                        'content-type': 'application/json'
+                    },
+                    body:JSON.stringify(user)
+                })
+                .then (res => res.json())
+                .then (data => {
+                    if(data.insertedId){
+                        Swal.fire({
+                            icon: 'success',
+                            title: "User Created successfully",
+                          })
+                    }
+                })
+
+                
+            })
+            .catch(Error => {
+                console.error(Error.message)
+                Swal.fire({
+                    icon: 'error',
+                    title: Error,
+                  })
+            })
+        // const user = {name, username, imageurl, email, password};
+    }
+
     return (
         <div className=" items-center flex flex-col rounded-xl bg-base-600 my-4 bg-clip-border text-[#f16022] shadow-none">
             <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
@@ -9,10 +55,11 @@ const SignUp = () => {
             <p className="mt-1 block font-sans text-base font-normal leading-relaxed text-[#f16022] antialiased">
                 Enter your details to register.
             </p>
-            <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
+            <form onSubmit={handlesignup} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
                 <div className="mb-4 flex flex-col gap-6">
                     <div className="relative h-11 w-full min-w-[200px]">
                         <input
+                            name="name"
                             className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-[#f16022] outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-[#f16022] focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                             placeholder=" "
                         />
@@ -22,6 +69,7 @@ const SignUp = () => {
                     </div>
                     <div className="relative h-11 w-full min-w-[200px]">
                         <input
+                            name="username"
                             className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-[#f16022] outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-[#f16022] focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                             placeholder=" "
                         />
@@ -31,6 +79,7 @@ const SignUp = () => {
                     </div>
                     <div className="relative h-11 w-full min-w-[200px]">
                         <input
+                            name="imageurl"
                             className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-[#f16022] outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-[#f16022] focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                             placeholder=" "
                         />
@@ -40,6 +89,7 @@ const SignUp = () => {
                     </div>
                     <div className="relative h-11 w-full min-w-[200px]">
                         <input
+                            name="email"
                             className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-[#f16022] outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-[#f16022] focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                             placeholder=" "
                         />
@@ -49,6 +99,7 @@ const SignUp = () => {
                     </div>
                     <div className="relative h-11 w-full min-w-[200px]">
                         <input
+                            name="password"
                             type="password"
                             className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-[#f16022] outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-[#f16022] focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                             placeholder=" "
@@ -103,7 +154,7 @@ const SignUp = () => {
                 </div>
                 <button
                     className="mt-6 block w-full select-none rounded-lg bg-[#f16022] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-[#f16022]/20 transition-all hover:shadow-lg hover:shadow-[#f16022]/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                    type="button"
+                    type="submit"
                     data-ripple-light="true"
                 >
                     Register
@@ -114,7 +165,7 @@ const SignUp = () => {
                         className="font-medium ml-1 text-[#f16022] transition-colors hover:text-blue-700"
                         to="/login"
                     >
-                       Log In
+                        Log In
                     </Link>
                 </p>
             </form>

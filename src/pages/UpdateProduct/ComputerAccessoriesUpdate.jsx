@@ -1,7 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
+import { useState } from "react";
+import Swal from "sweetalert2";
 
 const ComputerAccessoriesUpdate = () => {
+    const products = useLoaderData([]);
+    const {  productImg, productName, productBrand,  productPrice, productRating } = products;
     const [productType, setProductType] = useState("");
 
     const handleUpdateProduct = e => {
@@ -17,7 +21,7 @@ const ComputerAccessoriesUpdate = () => {
         console.log(updatedProducts)
 
         // Fetch URL 
-        let productUrl = 'http://localhost:5000/';
+        let productUrl = 'http://localhost:5000/computeraccessories';
 
         if (productType === 'ComputerAccessories') {
             productUrl = 'http://localhost:5000/computeraccessories'
@@ -51,7 +55,7 @@ const ComputerAccessoriesUpdate = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.insertedId) {
+                if (data.modifiedCount>0) {
                     Swal.fire(
                         'Success',
                         'Product is Added successfully',
@@ -72,7 +76,7 @@ const ComputerAccessoriesUpdate = () => {
             <div className="rounded-xl md:border-[#f16022] md:border-2 text-center  mt-5 py-5">
                 <div className=" items-center flex flex-col rounded-xl bg-transparent bg-clip-border text-[#f16022] shadow-none">
                     <h4 className="block text-3xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-                        Update Product
+                        Update Product {productName}
                         <hr className="h-1 bg-[#f16022] border-0 rounded-full" />
                     </h4>
                     <p className="mt-1 block  text-base font-normal leading-relaxed text-[#f16022] antialiased">
@@ -83,7 +87,7 @@ const ComputerAccessoriesUpdate = () => {
                             <div className="relative h-11 w-full min-w-[200px]">
                                 <input
                                     className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3  text-sm font-normal text-[#f16022] outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-[#f16022] focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
-                                    defaultValue={productImg}
+                                    defaultValue={products?.productImg}
                                     placeholder=" "
                                 />
                                 <label className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.1] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-[#f16022] peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-[#f16022] peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-[#f16022] peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 uppercase">
@@ -113,24 +117,27 @@ const ComputerAccessoriesUpdate = () => {
                                 </label>
                             </div>
 
-                            <select className="select h-11 w-full min-w-[200px] border-blue-200 border-t-0 focus:border-[#f16022] required">
+                            <select
+                            onChange={e => setProductType(e.target.value)}
+                            defaultValue={productType}
+                            className="select h-11 w-full min-w-[200px] border-blue-200 border-t-0 focus:border-[#f16022] required">
                                 <option disabled>Pick your Product Type</option>
-                                <option value={productType}>Computer Accessories</option>
-                                <option value={productType}>Computer Components</option>
-                                <option value={productType}>Laptop Accessories</option>
-                                <option value={productType}>Computer Monitors</option>
-                                <option value={productType}>Computer Networking</option>
-                                <option value={productType}>Power Strip</option>
-                                <option value={productType}>Printer</option>
-                                <option value={productType}>Scanner</option>
-                                <option value={productType}>Computer Servers</option>
-                                <option value={productType}>Data Storage</option>
+                                <option>Computer Accessories</option>
+                                <option>Computer Components</option>
+                                <option>Laptop Accessories</option>
+                                <option>Computer Monitors</option>
+                                <option>Computer Networking</option>
+                                <option>Power Strip</option>
+                                <option>Printer</option>
+                                <option>Scanner</option>
+                                <option>Computer Servers</option>
+                                <option>Data Storage</option>
                             </select>
 
                             <div className="relative h-11 w-full min-w-[200px]">
                                 <input
                                     className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3  text-sm font-normal text-[#f16022] outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-[#f16022] focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
-                                    defaultValue={}
+                                    defaultValue={productPrice}
                                     placeholder=" "
                                 />
                                 <label className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.1] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-[#f16022] peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-[#f16022] peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-[#f16022] peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 uppercase">
@@ -141,7 +148,7 @@ const ComputerAccessoriesUpdate = () => {
                             <div className="relative h-11 w-full min-w-[200px]">
                                 <input
                                     className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3  text-sm font-normal text-[#f16022] outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-[#f16022] focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
-                                    defaultValue={}
+                                    defaultValue={productRating}
                                     placeholder=" "
                                 />
                                 <label className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.1] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-[#f16022] peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-[#f16022] peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-[#f16022] peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 uppercase">
