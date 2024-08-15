@@ -3,7 +3,6 @@ export const Faq = () => {
     <div>
       <h1 className="text-3xl font-medium text-center py-10">FAQ</h1>
       
-
       <div
         tabIndex={0}
         className="collapse collapse-plus border-base-300 bg-base-200 border"
