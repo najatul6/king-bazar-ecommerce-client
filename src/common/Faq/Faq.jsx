@@ -3,8 +3,8 @@ import { faq } from "../../utils/faq";
 export const Faq = () => {
   return (
     <div>
-      <h1 className="text-3xl font-medium text-center py-10">FAQ</h1>
-      <div>
+      <h1 className="text-3xl font-bold text-center py-10 ">FAQ</h1>
+      <div className="flex flex-col justify-center items-center gap-5">
         {faq?.map((item, index) => <div
             key={index}
             tabIndex={0}
