@@ -15,7 +15,7 @@ export const Faq = () => {
             </div>
             <div className="collapse-content">
               <p>
-                {item?}
+                {item?.answer}
               </p>
             </div>
           </div>)}
