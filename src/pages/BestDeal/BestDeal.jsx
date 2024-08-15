@@ -10,3 +10,4 @@ const BestDeal = () => {
 };
 
 export default BestDeal;
+
