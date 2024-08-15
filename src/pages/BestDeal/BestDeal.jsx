@@ -7,8 +7,10 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Pagination } from 'swiper/modules';
+import { useState } from 'react';
 
 const BestDeal = () => {
+    const faq = useState([])
     
     return (
         <div>
