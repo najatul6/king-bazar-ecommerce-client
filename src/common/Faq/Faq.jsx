@@ -1,9 +1,11 @@
+import { faq } from "../../utils/faq";
+
 export const Faq = () => {
   return (
     <div>
       <h1 className="text-3xl font-medium text-center py-10">FAQ</h1>
-      
-      <div
+      <div>
+        {faq?.map((item,index)=>{ <div key={index}
         tabIndex={0}
         className="collapse collapse-plus border-base-300 bg-base-200 border"
       >
@@ -13,7 +15,9 @@ export const Faq = () => {
         <div className="collapse-content">
           <p>tabindex={0} attribute is necessary to make the div focusable</p>
         </div>
+      </div>})}
       </div>
+     
     </div>
   );
 };
