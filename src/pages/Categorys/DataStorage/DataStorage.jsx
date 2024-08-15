@@ -5,7 +5,7 @@ import DataStorageCard from "./DataStorageCard";
 const DataStorage = () => {
     const [product, setProduct] =useState()
     useEffect(()=>{
-        fetch('https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/storage')
+        fetch(' http://localhost:5000/storage')
         .then(res=> res.json())
         .then(data => setProduct(data))
     },[])

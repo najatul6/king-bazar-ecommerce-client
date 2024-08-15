@@ -1,13 +1,15 @@
 import Banner from "../../common/Banner/Banner";
-import BestDeal from "../BestDeal/BestDeal";
-import Categorys from "../Categorys/Categorys";
+// import BestDeal from "../BestDeal/BestDeal";
+import Brands from "../Brands/Brands";
+// import Categorys from "../Categorys/Categorys";
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <BestDeal></BestDeal>
-            <Categorys ></Categorys>
+            <Brands></Brands>
+            {/* <BestDeal></BestDeal>
+            <Categorys ></Categorys> */}
         </div>
     );
 };

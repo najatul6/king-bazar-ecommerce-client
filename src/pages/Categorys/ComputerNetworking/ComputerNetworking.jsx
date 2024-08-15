@@ -5,7 +5,7 @@ import ComputerNetworkingCard from "./ComputerNetworkingCard";
 const ComputerNetworking = () => {
     const [product, setProduct] = useState()
     useEffect(() => {
-        fetch('https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/networking')
+        fetch(' http://localhost:5000/networking')
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])

@@ -4,7 +4,7 @@ import { FiChevronsRight } from "react-icons/fi";
 const ComputerComponents = () => {
     const [product, setProduct] = useState()
     useEffect(() => {
-        fetch('https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/components')
+        fetch(' http://localhost:5000/components')
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])

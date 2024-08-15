@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const Scaner = () => {
     const [product, setProduct] = useState()
     useEffect(() => {
-        fetch('https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/scanner')
+        fetch(' http://localhost:5000/scanner')
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])

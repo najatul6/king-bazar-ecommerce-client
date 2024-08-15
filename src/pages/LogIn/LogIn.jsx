@@ -16,6 +16,7 @@ const LogIn = () => {
         const password = form.password.value;
         logIn(email, password)
             .then(result => {
+                console.log(result);
                 Swal.fire({
                     icon: 'success',
                     title: "Log in Succesfully",
@@ -23,6 +24,7 @@ const LogIn = () => {
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
+                console.log(error);
                 Swal.fire({
                     icon: 'warning',
                     title: error.message,
@@ -32,7 +34,8 @@ const LogIn = () => {
 
     const handleGoogle = () => {
         googleLogIn()
-            .then(result => {
+        .then(result => {
+            console.log(result);
                 Swal.fire({
                     icon: 'success',
                     title: "Log in Succesfully",
@@ -40,6 +43,7 @@ const LogIn = () => {
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
+                console.log(error);
                 Swal.fire({
                     icon: 'warning',
                     title: error.message,
@@ -93,7 +97,8 @@ const LogIn = () => {
                 >
                     Log In
                 </button>
-                <div className="flex items-center justify-center mt-5 gap-2">
+            </form>
+            <div className="flex items-center justify-center mt-5 gap-2">
                     <p className="h-1 w-7 border-none bg-[#f16022]"></p>
                     <p className="text-lg">Continue With</p>
                     <p className="h-1 w-7 border-none bg-[#f16022]"></p>
@@ -111,7 +116,6 @@ const LogIn = () => {
                         Register
                     </Link>
                 </p>
-            </form>
         </div>
     );
 };

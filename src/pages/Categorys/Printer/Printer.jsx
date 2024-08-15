@@ -5,7 +5,7 @@ import PrinterCard from "./PrinterCard";
 const Printer = () => {
     const [product, setProduct] = useState()
     useEffect(() => {
-        fetch('https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/printer')
+        fetch(' http://localhost:5000/printer')
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])

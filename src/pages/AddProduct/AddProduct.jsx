@@ -18,33 +18,8 @@ const AddProduct = () => {
         const products = { productImg, productName, productBrand, productType, productDescription, productPrice, productRating }
         console.log(products)
 
-        // Fetch URL 
-        let productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/';
-
-        if (productType === 'ComputerAccessories') {
-            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/computeraccessories'
-        } else if (productType === 'Components') {
-            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/components'
-        } else if (productType === 'Accessories') {
-            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/accessories'
-        } else if (productType === 'Monitors') {
-            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/monitors'
-        } else if (productType === 'Networking') {
-            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/networking'
-        } else if (productType === 'Strip') {
-            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/strip'
-        } else if (productType === 'Printer') {
-            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/printer'
-        } else if (productType === 'Scanner') {
-            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/scanner'
-        } else if (productType === 'Servers') {
-            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/servers'
-        } else if (productType === 'Storage') {
-            productUrl = 'https://king-bazar-ecommerce-server-ktqiplm2c-jinkalas-projects.vercel.app/storage'
-        }
-
         // Send Data to Server 
-        fetch(productUrl, {
+        fetch('http://localhost:5000/allProducts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
