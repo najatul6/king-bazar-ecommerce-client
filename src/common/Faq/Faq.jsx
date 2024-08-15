@@ -10,7 +10,7 @@ export const Faq = () => {
             tabIndex={0}
             className="collapse collapse-plus border-base-300 bg-base-200 border"
           >
-            <div className="collapse-title text-xl font-medium">
+            <div className="collapse-title text-lg lg:text-xl font-medium">
               {item?.question}
             </div>
             <div className="collapse-content">
