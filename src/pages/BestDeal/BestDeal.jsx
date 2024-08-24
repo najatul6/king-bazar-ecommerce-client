@@ -5,7 +5,7 @@ import 'swiper/css/pagination';
 // import required modules
 import { Pagination } from 'swiper/modules';
 import { useEffect, useState } from 'react';
-import BestDealCard from '../../common/BestDealCard/BestDealCard';
+import BestDealCard from './BestDealCard/BestDealCard';
 
 const BestDeal = () => {
   const [bestProducts, setBestProducts] = useState([])

@@ -1,5 +1,5 @@
 
-const BestDealCard = () => {
+const BestDealCard = ({item}) => {
     return (
         <div>
             
