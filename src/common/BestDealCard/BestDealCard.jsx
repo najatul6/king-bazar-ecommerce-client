@@ -6,20 +6,12 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Pagination } from 'swiper/modules';
-import { useState } from 'react';
 
-const BestDeal = () => {
-  const [bestProducts, setBestProducts] = useState([])
-  useEffect(()=>{
-      fetch('http://localhost:5000/bestDeals')
-      .then(res => res.json())
-      .then(data => setBestProducts(data))
-  },[])
 
-    
-    return (
-        <div>
-            <Swiper
+const BestDealCard = () => {
+  return (
+    <div>
+         <Swiper
         slidesPerView={3}
         spaceBetween={30}
         pagination={{
@@ -38,13 +30,8 @@ const BestDeal = () => {
         <SwiperSlide>Slide 8</SwiperSlide>
         <SwiperSlide>Slide 9</SwiperSlide>
       </Swiper>
-        </div>
-    );
-};
+    </div>
+  )
+}
 
-export default BestDeal;
-
-
-
-
-
+export default BestDealCard
