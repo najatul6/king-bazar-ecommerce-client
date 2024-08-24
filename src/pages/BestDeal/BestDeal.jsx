@@ -32,7 +32,7 @@ const BestDeal = () => {
         {bestProducts?.map(item=>{
           return(
             <SwiperSlide key={item?._id}>
-              <BestDealCard/>
+              <BestDealCard item={item}/>
             </SwiperSlide>
           )
         })}
