@@ -7,6 +7,7 @@ import 'swiper/css/pagination';
 // import required modules
 import { Pagination } from 'swiper/modules';
 import { useState } from 'react';
+import BestDealCard from '../../common/BestDealCard/BestDealCard';
 
 const BestDeal = () => {
   const [bestProducts, setBestProducts] = useState([])
@@ -30,7 +31,9 @@ const BestDeal = () => {
       >
         {bestProducts?.map(item=>{
           return(
-            <SwiperSlide key={item?._id}>Slide 1</SwiperSlide>
+            <SwiperSlide key={item?._id}>
+              <BestDealCard/>
+            </SwiperSlide>
           )
         })}
         <SwiperSlide>Slide 1</SwiperSlide>
