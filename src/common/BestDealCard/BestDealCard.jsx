@@ -1,10 +1,11 @@
 
 
 
-const BestDealCard = () => {
+const BestDealCard = ({item}) => {
+    const {}=item;
   return (
     <div>
-        
+
     </div>
   )
 }

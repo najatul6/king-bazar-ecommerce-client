@@ -1,12 +1,10 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 // import required modules
 import { Pagination } from 'swiper/modules';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import BestDealCard from '../../common/BestDealCard/BestDealCard';
 
 const BestDeal = () => {
