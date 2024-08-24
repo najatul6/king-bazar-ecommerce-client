@@ -1,0 +1,93 @@
+[
+    {
+      "id": 1,
+      "brand": "Dell",
+      "product_name": "Dell XPS 13",
+      "category": "Laptop",
+      "price": 1299.99,
+      "discount_price": 1099.99,
+      "features": [
+        "13.4-inch FHD+ display",
+        "Intel Core i7 11th Gen",
+        "16GB RAM",
+        "512GB SSD",
+        "Intel Iris Xe Graphics"
+      ],
+      "rating": 4.8,
+      "stock_availability": true,
+      "image_url": "https://example.com/images/dell_xps_13.jpg"
+    },
+    {
+      "id": 2,
+      "brand": "Apple",
+      "product_name": "MacBook Air M2",
+      "category": "Laptop",
+      "price": 1199.99,
+      "discount_price": 999.99,
+      "features": [
+        "13.6-inch Retina display",
+        "Apple M2 chip",
+        "8GB RAM",
+        "256GB SSD",
+        "Fanless design"
+      ],
+      "rating": 4.9,
+      "stock_availability": true,
+      "image_url": "https://example.com/images/macbook_air_m2.jpg"
+    },
+    {
+      "id": 3,
+      "brand": "HP",
+      "product_name": "HP Spectre x360",
+      "category": "Laptop",
+      "price": 1499.99,
+      "discount_price": 1299.99,
+      "features": [
+        "13.5-inch OLED touch display",
+        "Intel Core i7 12th Gen",
+        "16GB RAM",
+        "1TB SSD",
+        "360-degree hinge"
+      ],
+      "rating": 4.7,
+      "stock_availability": true,
+      "image_url": "https://example.com/images/hp_spectre_x360.jpg"
+    },
+    {
+      "id": 4,
+      "brand": "Lenovo",
+      "product_name": "Lenovo ThinkPad X1 Carbon Gen 10",
+      "category": "Laptop",
+      "price": 1699.99,
+      "discount_price": 1399.99,
+      "features": [
+        "14-inch 4K UHD display",
+        "Intel Core i7 12th Gen",
+        "16GB RAM",
+        "512GB SSD",
+        "Carbon fiber chassis"
+      ],
+      "rating": 4.8,
+      "stock_availability": true,
+      "image_url": "https://example.com/images/lenovo_thinkpad_x1_carbon.jpg"
+    },
+    {
+      "id": 5,
+      "brand": "Asus",
+      "product_name": "Asus ROG Zephyrus G14",
+      "category": "Laptop",
+      "price": 1599.99,
+      "discount_price": 1299.99,
+      "features": [
+        "14-inch QHD display",
+        "AMD Ryzen 9 5900HS",
+        "32GB RAM",
+        "1TB SSD",
+        "NVIDIA GeForce RTX 3060"
+      ],
+      "rating": 4.7,
+      "stock_availability": true,
+      "image_url": "https://example.com/images/asus_rog_zephyrus_g14.jpg"
+    }
+  ]
+  
