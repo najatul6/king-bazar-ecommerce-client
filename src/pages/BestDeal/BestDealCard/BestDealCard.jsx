@@ -11,8 +11,9 @@ const BestDealCard = ({item}) => {
                     {product_name}
                 </h2>
                 <ul>
-                    {features?.map(feature=><li >{feature}</li>)}
+                    {features?.map((feature,idx)=><li key={idx}>{feature}</li>)}
                 </ul>
+                <p>Price: {price}</p>
             </div>
         </div>
     );
