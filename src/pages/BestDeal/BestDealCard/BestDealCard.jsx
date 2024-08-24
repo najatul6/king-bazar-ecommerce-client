@@ -1,4 +1,4 @@
-
+import PropTypes from "prop-types";
 const BestDealCard = ({item}) => {
     const {brand,product_name,category,discount_price,price,features,rating,stock_availability,image_url}=item;
     return (
@@ -19,5 +19,9 @@ const BestDealCard = ({item}) => {
         </div>
     );
 };
+
+BestDealCard.propTypes = {
+    item: PropTypes.object.isRequired,
+}
 
 export default BestDealCard;
