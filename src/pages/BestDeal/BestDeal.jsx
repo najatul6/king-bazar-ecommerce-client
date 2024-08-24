@@ -10,7 +10,12 @@ import { Pagination } from 'swiper/modules';
 import { useState } from 'react';
 
 const BestDeal = () => {
-    const faq = useState([])
+  const [bestProducts, setbestProducts] = useState([])
+  useEffect(()=>{
+      fetch('http://localhost:5000/bestDeals')
+      .then(res => res.json())
+      .then(data => setBrands(data))
+  },[])
     
     return (
         <div>
