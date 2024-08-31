@@ -14,7 +14,7 @@ const BestDealCard = ({item}) => {
                     <p className="font-bold underline">Features :</p>
                     {features?.map((feature,idx)=><li key={idx}> &#x2609; {feature}</li>)}
                 </ul>
-                <p>Price: $<strike>{price}</strike></p>
+                <p>Price: $<strike className="text-red-500">{price}</strike></p>
                 <p>Discount Price: ${discount_price}</p>
             </div>
         </div>
