@@ -8,6 +8,15 @@ const allProducts=[
             "productDescription":"POWER UP YOUR PLAY - Draw more frames and win more games with Windows 11, a 13th Gen Intel Core i7-13650HX processor, and an NVIDIA GeForce RTX 4060 Laptop GPU at 140W Max TGP. BLAZING FAST MEMORY AND STORAGE – Multitask swiftly with 16GB of DDR5-4800MHz memory and speed up loading times with 512GB of PCIe 4x4. ROG INTELLIGENT COOLING – To put this amount of power in a gaming laptop, you need an even better cooling solution. The Strix features Thermal Grizzly’s Conductonaut Extreme liquid metal on the CPU, and a third intake fan among other premium features, to allow for better sustained performance over long gaming sessions. SWIFT VISUALS – The Strix G16 has a fast FHD 165Hz panel to make sure you never miss a moment. It also covers 100% of the sRGB color space and feature Dolby Vision, Adaptive-Sync support, and an 90% screen-to-body ratio for a stellar gaming and viewing experience. MUX SWITCH WITH ADVANCED OPTIMUS - A MUX Switch increases laptop gaming performance by 5-10% by routing frames directly from the dGPU to the display bypassing the iGPU. With Advanced Optimus the switch between iGPU and dGPU becomes automatic based on the task, optimizing battery life.",
             "productPrice":"26,2000",
             "productRating":"3.5"
-        }
+        },
+        {"_id":{"$oid":"65391dcca46837af0fe8c764"},
+        "productImg":"https://i.ibb.co/LxmdfVR/Corsair-Voyager-a1600-Gaming-Laptop-with-500-gb-graphic.jpg",
+        "productName":"Corsair-Voyager-a1600-Gaming",
+        "productBrand":"Corsair",
+        "productType":"",
+        "productDescription":"POWER UP YOUR PLAY - Draw more frames and win more games with Windows 11, a 13th Gen Intel Core i7-13650HX processor, and an NVIDIA GeForce RTX 4060 Laptop GPU at 140W Max TGP. BLAZING FAST MEMORY AND STORAGE – Multitask swiftly with 16GB of DDR5-4800MHz memory and speed up loading times with 512GB of PCIe 4x4. ROG INTELLIGENT COOLING – To put this amount of power in a gaming laptop, you need an even better cooling solution. The Strix features Thermal Grizzly’s Conductonaut Extreme liquid metal on the CPU, and a third intake fan among other premium features, to allow for better sustained performance over long gaming sessions. SWIFT VISUALS – The Strix G16 has a fast FHD 165Hz panel to make sure you never miss a moment. It also covers 100% of the sRGB color space and feature Dolby Vision, Adaptive-Sync support, and an 90% screen-to-body ratio for a stellar gaming and viewing experience. MUX SWITCH WITH ADVANCED OPTIMUS - A MUX Switch increases laptop gaming performance by 5-10% by routing frames directly from ",
+        "productPrice":"154000",
+        "productRating":"4"
+    }
     
 ]
