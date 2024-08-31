@@ -22,9 +22,9 @@ const Router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: '/brands/:id',
-                loader: ({params}) => fetch(`import.meta.env.VITE_URL/brands/${params.id}`),
-                element: <BrandDetails></BrandDetails>
+                path: '/brands/:_id',
+                element: <BrandDetails></BrandDetails>,
+                loader: ({params})=>fetch(`http://localhost:5000/brands/${params.id}`),
             },
             {
                 path: '/addproduct',

@@ -12,7 +12,7 @@ const BrandDetails = () => {
     const { title, bannerImages } = loadedData;
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/allProducts/${title}`)
+        fetch(`http://localhost:5000/AllProducts/${title}`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [title])
