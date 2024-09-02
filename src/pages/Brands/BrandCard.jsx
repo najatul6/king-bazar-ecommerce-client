@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 const BrandCard = ({brand}) => {
     const {title, logo, _id} = brand;
     return (
