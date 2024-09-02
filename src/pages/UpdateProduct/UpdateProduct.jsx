@@ -7,7 +7,7 @@ const UpdateProduct = () => {
     const products = useLoaderData([]);
     const { productImg, productName, productBrand, productPrice, productDescription, productRating, _id } = products;
     const [productType, setProductType] = useState("");
-    console.log(products);
+    // console.log(products);
     const handleUpdateProduct = e => {
         e.preventDefault();
         const form = e.target;
@@ -18,7 +18,7 @@ const UpdateProduct = () => {
         const productPrice = form.productprice.value;
         const productRating = form.productrating.value;
         const updatedProducts = { productImg, productName, productBrand, productType, productDescription, productPrice, productRating }
-        console.log(updatedProducts)
+        // console.log(updatedProducts)
 
         // Send Data to Server 
         fetch(`http://localhost:5000/products/update/${_id}`, {
