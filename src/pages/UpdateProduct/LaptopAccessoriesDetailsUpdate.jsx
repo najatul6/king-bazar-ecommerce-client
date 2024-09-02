@@ -18,7 +18,7 @@ const LaptopAccessoriesDetailsUpdate = () => {
         const productPrice = form.productprice.value;
         const productRating = form.productrating.value;
         const updatedProducts = { productImg, productName, productBrand, productType, productDescription, productPrice, productRating }
-        console.log(updatedProducts)
+        // console.log(updatedProducts)
 
         // Send Data to Server 
         fetch(productUrl, {
@@ -45,7 +45,7 @@ const LaptopAccessoriesDetailsUpdate = () => {
             <h2 className="text-2xl flex items-center gap-3 rounded-xl bg-base-600 border-2 hover:border-[#f16022] btn font-semibold uppercase text-[#f16022]">
                 <BiArrowBack></BiArrowBack>
                 <Link to='/'>
-                    Go Back
+                    {/* Go Back */}
                 </Link>
             </h2>
             <div className="rounded-xl md:border-[#f16022] md:border-2 text-center  mt-5 py-5">
