@@ -16,7 +16,7 @@ const AddProduct = () => {
         const productPrice = form.productprice.value;
         const productRating = form.productrating.value;
         const products = { productImg, productName, productBrand, productType, productDescription, productPrice, productRating }
-        console.log(products)
+        // console.log(products)
 
         // Send Data to Server 
         fetch('http://localhost:5000/allProducts', {
