@@ -20,7 +20,7 @@ const AddProduct = () => {
 
         // Send Data to Server 
         fetch('http://localhost:5000/allProducts', {
-            method: 'POST',
+            // method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
