@@ -6,7 +6,7 @@ const BrandCard = ({brand}) => {
         <Link to={`/brands/${_id}`}>
         <div className='p-2 bg-gray-300 dark:bg-gray-600'>
             <img className='h-48 w-full' src={logo} alt={title} />
-            {/* <h4 className='font-bold text-black dark:text-white text-3xl text-center my-2'>{title}</h4> */}
+            <h4 className='font-bold text-black dark:text-white text-3xl text-center my-2'>{title}</h4>
         </div>
         </Link>
     );
