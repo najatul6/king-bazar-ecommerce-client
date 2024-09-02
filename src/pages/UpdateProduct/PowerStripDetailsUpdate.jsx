@@ -18,7 +18,7 @@ const PowerStripDetailsUpdate = () => {
         const productPrice = form.productprice.value;
         const productRating = form.productrating.value;
         const updatedProducts = { productImg, productName, productBrand, productType, productDescription, productPrice, productRating }
-        console.log(updatedProducts)
+        // console.log(updatedProducts)
 
         // Fetch URL 
         let productUrl = ' https://king-bazar-ecommerce-server-nwxrtea0c-jinkalas-projects.vercel.app/';
